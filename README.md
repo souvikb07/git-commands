@@ -8,13 +8,12 @@
 
 # Useful Git Commands
 
-You can also read the [Portuguese](translation/README.pt-br.md) version.
 
 ## About it
 > Have you recently started using Git? This should give you the base commands you need to perform the most common actions in Git. If you find a command that is not here, or could be explained better, please don't hesitate in * [Contributing](#contributing). Cheers!
 
 ## Table of contents
-
+* [Daily Use git](#daily)
 * [Install git](#install-git)
 * [Setting up git](#setting-up-git)
 * [Applying colour to git ](#applying-colour-to-git)
@@ -32,19 +31,66 @@ You can also read the [Portuguese](translation/README.pt-br.md) version.
 * [Checking what you are committing](#checking-what-you-are-committing)
 * [Useful Commands](#useful-commands)
 * [Useful Alias](#useful-alias)
-* [Contributing](#contributing)
 
 #### Git
 
 Git is a distributed version control system, very easy to learn and supper fast!
 
+#### Daily Use git
+These are my daily use git commands
+
+```
+# Hidden files
+$ ls -a
+
+# How to add anyfile
+$ touch filename
+
+# Move ipynb to file
+$ mv jupyter.ipynb FolderName
+
+# To add the notebook to github repo
+$ git add jupyter.ipynb 
+# Commit changes
+$ git commit -m "Add initial notebook" 
+
+# Push the origin file
+$ git push origin master
+
+# Ignore the csv file
+$ atom .gitignore #After this just add the name of the csv i.e. filename.csv
+
+# To see all the files in .gitignore
+$ cat .gitignore
+
+#How to create a package
+# first create a directory
+$ mkdir nameofdirectory
+#create a __init__.py in that directory
+$ touch nameofdirectory/__init__.py #add packages in it
+#create another package name data
+$ touch nameofdirectory/data.py
+
+# Create a unit test to test the packages
+# create a directory name tests
+$ mkdir nameofdirectory/tests
+# create the test python file
+$ atom nameofdirectory/tests/tes_data.py # now copy paste the code in this file
+
+# How to invoke pytest and test everything in nameofdirectory
+$ python -m pytest nameofdirectory
+
+# Create a test file
+$ Makefile # edit the test in this file
+
+```
 #### Install Git
 
 There are a few different ways to install git (from source or for Linux) but the purpose of this page is to focus on git commands, so I am going to assume you are installing git on a Mac.
 
 To view other ways of installing it visit the [Git official site](http://git-scm.com/book/en/Getting-Started-Installing-Git)
 
-Click [here](http://git-scm.com/download/mac) to download and install Git
+Click [here](https://git-scm.com/download/win) to download and install Git
 
 ##### Setting up git
 
@@ -413,11 +459,3 @@ To add an alias simply open your .gitconfig file on your home directory and incl
 # Shows the log in a more consisted way with the graph for branching and merging
 lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 ```
-
-### Contributing
-
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push -u origin my-new-feature`
-5. Submit a pull request - cheers!
